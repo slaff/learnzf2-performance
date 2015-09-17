@@ -34,9 +34,10 @@ class Module
             $eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'savePageCache'), -10000);
             // Page Cache End
             
-
+            // Action Cache Start
             $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this,'getActionCache'), 2);
             $eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'saveActionCache'), 0);
+            // Action Cache End
         }
 
         if($services->has('cache')) {
@@ -125,6 +126,7 @@ class Module
     }
 // -- Page Cache End
 
+// -- Action Cache Start
     // Action cache implementation
     public function getActionCache(MvcEvent $event)
     {
@@ -177,6 +179,7 @@ class Module
             }
         }
     }
+// -- Action Cache End
 
     /**
      * Generates valid page cache key
