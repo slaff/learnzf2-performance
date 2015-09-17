@@ -23,7 +23,8 @@
 		"doctrine/common" : ">=2.1",
 		"doctrine/orm" : ">=2.1",
 		"zendframework/zendframework" : "2.*",
-		"zendframework/zendpdf" : "2.*"
+		"zendframework/zendpdf" : "2.*",
+		"evandotpro/edp-superluminal": "dev-master"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "3.7.*"
