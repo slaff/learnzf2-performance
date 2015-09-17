@@ -61,9 +61,10 @@ return array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
             'cipher'     => 'Application\Service\Factory\SymmetricCipher',
             'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
-            'text-cache' => 'Zend\Cache\Service\StorageCacheFactory',
-            'var-cache'	 => 'Application\Service\Factory\VariableCache',
         ),
+        'abstract_factories' => array(
+            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+        )
     ),
     'translator' => array(
         'locale' => 'en_US',
