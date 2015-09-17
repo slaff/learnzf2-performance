@@ -25,12 +25,15 @@ class Module
 
         $services = $e->getApplication()->getServiceManager();
         if($services->has('text-cache')) {
+            // Page Cache Start
             // This will be used to check if there is already cached page and return it.
             // The priority must be low in order to be executed after the routing is done
             $eventManager->attach(MvcEvent::EVENT_ROUTE, array($this,'getPageCache'), -1000);
             // And this will be used to save a generated cache page.
             // The priority must be low in order to be executed after the rendering is done
             $eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'savePageCache'), -10000);
+            // Page Cache End
+            
 
             $eventManager->attach(MvcEvent::EVENT_DISPATCH, array($this,'getActionCache'), 2);
             $eventManager->attach(MvcEvent::EVENT_RENDER, array($this,'saveActionCache'), 0);
@@ -77,6 +80,7 @@ class Module
         );
     }
 
+ // -- Page Cache Start
     public function getPageCache(MvcEvent $event)
     {
         $match = $event->getRouteMatch();
@@ -119,6 +123,7 @@ class Module
             }
         }
     }
+// -- Page Cache End
 
     // Action cache implementation
     public function getActionCache(MvcEvent $event)
