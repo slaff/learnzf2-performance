@@ -51,7 +51,7 @@ return array(
                                 'action'        => 'list',
                                 'page'          => '1',
                                 // 'pagecache'     => true,
-                                'actioncache'   => true,
+                                // 'actioncache'   => true,
                                 'tags'		 => array('exam-list'),
                             ),
                         )
