@@ -2,6 +2,14 @@ Learn ZF2
 =======================
 "Learn ZF2" (http://learnzf2.com) is a book dedicated to help you learn fast and easy Zend Framework 2.
 
+Performance Code
+================
+This repository contains tips and tricks on performance optimization for ZF2 
+that can be applied to most ZF2 application.
+
+The slides from ZendCon 2015 can be downloaded as PDF from [ZendConPresentation.pdf](ZendConPresentation.pdf).
+
+
 Source Code
 ------------
 The book is accompanied by source code from which you can learn by example.
